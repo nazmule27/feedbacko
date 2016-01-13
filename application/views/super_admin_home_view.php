@@ -1,0 +1,50 @@
+<?php
+$this->load->view('common/header');
+$this->load->view('common/navbar');
+$CI = &get_instance();
+$role = $CI->session->userdata('role');
+$username = $CI->session->userdata('username');
+$full_name = $CI->session->userdata('full_name');
+?>
+
+<div class="container paddingT75">
+    <div class="row">
+        <div class="col-md-12 col-ms-12 col-xs-12">
+            <h4>Feedback List:</h4>
+            <br>
+            <div class="row">
+                <div class="col-md-10 col-ms-10 col-xs-12">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>Semester Name</th>
+                            <th>Course Summary</th>
+                            <th>Instructor Summary</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $k=1; for ($i = 0; $i < count($my_courses); ++$i) {?>
+                            <tr>
+                                <td><?php echo $k;?></td>
+                                <td><?php echo $my_courses[$i]->semester_id?></td>
+                                <td>
+                                    <?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_course_wise/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'">'.$my_courses[$i]->course_name.' ('.$my_courses[$i]->course_id.')</a>' ?>
+                                </td>
+                                <td><?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_teacher_wise/'.$my_courses[$i]->teacher_id.'/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'"> '.$my_courses[$i]->full_name.' ('.$my_courses[$i]->teacher_id.')'.'</a>' ?></td>
+                            </tr>
+                            <?php $k++;} ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2 col-ms-2 col-xs-12">
+                    <a target="_blank" href="<?php echo base_url();?>super_admin_home/exit_feedback_summery">Exit Feedback Summary</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /home -->
+<?php
+$this->load->view('common/footer');
+?>
