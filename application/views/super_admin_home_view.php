@@ -18,20 +18,20 @@ $full_name = $CI->session->userdata('full_name');
                         <thead>
                         <tr>
                             <th>SL</th>
-                            <th>Semester Name</th>
-                            <th>Course Summary</th>
-                            <th>Instructor Summary</th>
+                            <!--<th>Semester Name</th>-->
+                            <th>Course Summary (Count)</th>
+                            <th>Instructor Summary (Count)</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php $k=1; for ($i = 0; $i < count($my_courses); ++$i) {?>
                             <tr>
                                 <td><?php echo $k;?></td>
-                                <td><?php echo $my_courses[$i]->semester_id?></td>
+                                <!--<td><?php /*echo $my_courses[$i]->semester_id*/?></td>-->
                                 <td>
-                                    <?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_course_wise/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'">'.$my_courses[$i]->course_name.' ('.$my_courses[$i]->course_id.')</a>' ?>
+                                    <?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_course_wise/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'">'.$my_courses[$i]->course_name.' ('.$my_courses[$i]->course_id.') ('.$my_courses[$i]->course_given.')'.' </a>' ?>
                                 </td>
-                                <td><?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_teacher_wise/'.$my_courses[$i]->teacher_id.'/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'"> '.$my_courses[$i]->full_name.' ('.$my_courses[$i]->teacher_id.')'.'</a>' ?></td>
+                                <td><?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_teacher_wise/'.$my_courses[$i]->teacher_id.'/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'"> '.$my_courses[$i]->full_name.' ('.$my_courses[$i]->teacher_id.') ('.$my_courses[$i]->instructor_given.')'.'</a>' ?></td>
                             </tr>
                             <?php $k++;} ?>
                         </tbody>

@@ -16,7 +16,6 @@ class Super_admin_home extends CI_Controller
             redirect('login');
         }
     }
-
     public function index() {
         $data['my_courses'] = $this->admin_home_model->getCourses();
         $this->load->view('super_admin_home_view', $data);

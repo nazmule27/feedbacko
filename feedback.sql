@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
+-- version 3.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 13, 2016 at 09:31 AM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Host: localhost
+-- Generation Time: Jan 16, 2016 at 02:02 PM
+-- Server version: 5.5.41-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.11
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,298 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `feedback`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coure_teacher_map`
---
-
-CREATE TABLE IF NOT EXISTS `coure_teacher_map` (
-  `course_id` varchar(20) NOT NULL,
-  `teacher` varchar(50) DEFAULT NULL,
-  UNIQUE KEY `course_id` (`course_id`,`teacher`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coure_teacher_map`
---
-
-INSERT INTO `coure_teacher_map` (`course_id`, `teacher`) VALUES
-('CSE103', 'kaykobad'),
-('CSE103', 'mahmudanaznin'),
-('CSE105', 'ashikurrahman'),
-('CSE105', 'shaifur'),
-('CSE106', 'Anik'),
-('CSE106', 'ashikurrahman'),
-('CSE106', 'radireza'),
-('CSE106', 'shaifur'),
-('CSE106', 'tanmoycse'),
-('CSE106', 'tanveerawal'),
-('CSE201', 'mahfuz'),
-('CSE201', 'rifat'),
-('CSE202', 'adnan'),
-('CSE202', 'Anik'),
-('CSE202', 'Ishtiyaque'),
-('CSE202', 'Papon'),
-('CSE202', 'rifat'),
-('CSE202', 'sakib'),
-('CSE202', 'siddhartha'),
-('CSE202', 'tanviralamin'),
-('CSE203', 'kashem'),
-('CSE203', 'sukarnabarua'),
-('CSE204', 'kashem'),
-('CSE204', 'khaledshahriar'),
-('CSE204', 'mmasroorali'),
-('CSE204', 'sukarnabarua'),
-('CSE205', 'aashik'),
-('CSE205', 'tanzimahashem'),
-('CSE206', 'aashik'),
-('CSE206', 'mdmonirulislam'),
-('CSE206', 'tanzimahashem'),
-('CSE206', 'wasif'),
-('CSE207', 'johramoosa'),
-('CSE207', 'Papon'),
-('CSE208', 'Ishtiyaque'),
-('CSE295', 'tanveerawal'),
-('CSE296', 'johramoosa'),
-('CSE296', 'tanmoycse'),
-('CSE296', 'tanveerawal'),
-('CSE300', 'adnan'),
-('CSE300', 'Anne'),
-('CSE300', 'saidurrahman'),
-('CSE300', 'tanviralamin'),
-('CSE301', 'adnan'),
-('CSE301', 'Anik'),
-('CSE303', 'anindyaiqbal'),
-('CSE303', 'asmlatifulhoque'),
-('CSE304', 'asmlatifulhoque'),
-('CSE304', 'madhusudan'),
-('CSE304', 'tanmoycse'),
-('CSE304', 'toufique'),
-('CSE305', 'Ishtiyaque'),
-('CSE305', 'Papon'),
-('CSE305', 'saidurrahman'),
-('CSE305', 'tanviralamin'),
-('CSE306', 'madhusudan'),
-('CSE307', 'anindyaiqbal'),
-('CSE307', 'mostofa'),
-('CSE307', 'sadia'),
-('CSE308', 'ali_nayeem'),
-('CSE308', 'Anne'),
-('CSE308', 'Ishtiyaque'),
-('CSE308', 'khaledshahriar'),
-('CSE308', 'mdmonirulislam'),
-('CSE308', 'mostofa'),
-('CSE308', 'radireza'),
-('CSE308', 'Saquib'),
-('CSE308', 'tanviralamin'),
-('CSE308', 'toufique'),
-('CSE309', 'mmasroorali'),
-('CSE309', 'smfarhad'),
-('CSE310', 'mmasroorali'),
-('CSE310', 'smfarhad'),
-('CSE311', 'khaledshahriar'),
-('CSE311', 'madhusudan'),
-('CSE311', 'siddhartha'),
-('CSE313', 'ali_nayeem'),
-('CSE313', 'sakib'),
-('CSE314', 'ali_nayeem'),
-('CSE314', 'Ishtiyaque'),
-('CSE314', 'mshohrabhossain'),
-('CSE314', 'Papon'),
-('CSE314', 'sakib'),
-('CSE314', 'siddhartha'),
-('CSE314', 'toufique'),
-('CSE315', 'azadsalam'),
-('CSE315', 'masattar'),
-('CSE316', 'azadsalam'),
-('CSE316', 'masattar'),
-('CSE316', 'Saquib'),
-('CSE316', 'toufique'),
-('CSE317', 'mdmonirulislam'),
-('CSE317', 'wasif'),
-('CSE321', 'mshohrabhossain'),
-('CSE321', 'razi'),
-('CSE322', 'Ishtiyaque'),
-('CSE322', 'mahmudanaznin'),
-('CSE322', 'mshohrabhossain'),
-('CSE322', 'razi'),
-('CSE322', 'tanmoycse'),
-('CSE324', 'Anik'),
-('CSE324', 'johramoosa'),
-('CSE324', 'madhusudan'),
-('CSE324', 'radireza'),
-('CSE324', 'sukarnabarua'),
-('CSE324', 'toufique'),
-('CSE409', 'Anne'),
-('CSE409', 'Saquib'),
-('CSE410', 'Anne'),
-('CSE410', 'johramoosa'),
-('CSE410', 'Saquib'),
-('CSE410', 'sukarnabarua'),
-('CSE461', 'kaysar'),
-('CSE462', 'kaysar'),
-('CSE462', 'khaledshahriar'),
-('CSE462', 'shaifur'),
-('CSE463', 'radireza'),
-('CSE464', 'Anik'),
-('CSE464', 'Ishtiyaque'),
-('CSE464', 'Radi'),
-('CSE471', 'eunus'),
-('CSE472', 'azadsalam'),
-('CSE472', 'eunus'),
-('CSE472', 'siddhartha'),
-('CSE473', 'mdmonirulislam'),
-('CSE474', 'mdmonirulislam'),
-('CSE474', 'Papon'),
-('CSE474', 'wasif');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `coure_teacher_map1`
---
-
-CREATE TABLE IF NOT EXISTS `coure_teacher_map1` (
-  `course_id` varchar(20) NOT NULL,
-  `teacher` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `coure_teacher_map1`
---
-
-INSERT INTO `coure_teacher_map1` (`course_id`, `teacher`) VALUES
-('CSE103', 'Kaykobad'),
-('CSE103', 'Mahmuda'),
-('CSE105', 'Ashik'),
-('CSE105', 'Saifur'),
-('CSE201', 'Rifat'),
-('CSE201', 'Mahfuz'),
-('CSE203', 'Sukarna'),
-('CSE203', 'Kashem'),
-('CSE205', 'Aashik'),
-('CSE205', 'Tanzima'),
-('CSE303', 'Anindya'),
-('CSE303', 'Latif'),
-('CSE305', 'Tanvir'),
-('CSE305', 'Saidur'),
-('CSE307', 'Sadia'),
-('CSE307', 'Mostafa'),
-('CSE309', 'Farhad'),
-('CSE309', 'Masroor'),
-('CSE311', 'Shiddartha'),
-('CSE311', 'Shahriar'),
-('CSE301', 'Anik'),
-('CSE301', 'Adnan'),
-('CSE313', 'Sakib'),
-('CSE313', 'Nayeem'),
-('CSE315', 'Azad'),
-('CSE315', 'Sattar'),
-('CSE317', 'Wasif'),
-('CSE317', 'Monir'),
-('CSE321', 'Shohrab'),
-('CSE321', 'Razi'),
-('CSE409', 'Anne'),
-('CSE409', 'Saquib'),
-('CSE461', 'Kaysar'),
-('CSE463', 'Radi'),
-('CSE471', 'Eunus'),
-('CSE473', 'Monir Jr.'),
-('CSE295', 'Tanveer'),
-('CSE106', 'Tanveer'),
-('CSE106', 'Saifur'),
-('CSE106', 'Ashik'),
-('CSE106', 'Tanmoy'),
-('CSE106', 'Radi'),
-('CSE106', 'Anik'),
-('CSE202', 'Rifat'),
-('CSE202', 'Tanvir'),
-('CSE202', 'Sakib'),
-('CSE202', 'Adnan'),
-('CSE202', 'Shiddartha'),
-('CSE202', 'Anik'),
-('CSE202', 'Ishtiyaque'),
-('CSE202', 'Papon'),
-('CSE204', 'Kashem'),
-('CSE204', 'Masroor'),
-('CSE204', 'Sukarna'),
-('CSE204', 'Shahriar'),
-('CSE206', 'Tanzima'),
-('CSE206', 'Wasif'),
-('CSE206', 'Aashik'),
-('CSE206', 'Monir'),
-('CSE207', 'Papon'),
-('CSE207', 'Johra'),
-('CSE208', 'Ishtiyaque'),
-('CSE300', 'Saidur'),
-('CSE300', 'Adnan'),
-('CSE300', 'Tanvir'),
-('CSE300', 'Anne'),
-('CSE304', 'Madhusudan'),
-('CSE304', 'Latif'),
-('CSE304', 'Toufiq'),
-('CSE304', 'Tanmoy'),
-('CSE305', 'Papon'),
-('CSE305', 'Ishtiyaque'),
-('CSE306', 'Madhusudan'),
-('CSE307', 'Anindya'),
-('CSE308', 'Monir Jr.'),
-('CSE308', 'Anne'),
-('CSE308', 'Mostafa'),
-('CSE308', 'Monir'),
-('CSE308', 'Nayeem'),
-('CSE308', 'Toufiq'),
-('CSE308', 'Radi'),
-('CSE308', 'Shahriar'),
-('CSE308', 'Tanvir'),
-('CSE308', 'Ishtiyaque'),
-('CSE308', 'Saquib'),
-('CSE310', 'Masroor'),
-('CSE310', 'Farhad'),
-('CSE311', 'Madhusudan'),
-('CSE314', 'Shohrab'),
-('CSE314', 'Sakib'),
-('CSE314', 'Nayeem'),
-('CSE314', 'Shiddartha'),
-('CSE314', 'Ishtiyaque'),
-('CSE314', 'Papon'),
-('CSE314', 'Toufiq'),
-('CSE316', 'Sattar'),
-('CSE316', 'Azad'),
-('CSE316', 'Saquib'),
-('CSE316', 'Toufiq'),
-('CSE322', 'Mahmuda'),
-('CSE322', 'Razi'),
-('CSE322', 'Shohrab'),
-('CSE322', 'Tanmoy'),
-('CSE322', 'Ishtiyaque'),
-('CSE324', 'Sukarna'),
-('CSE324', 'Anik'),
-('CSE324', 'Toufiq'),
-('CSE324', 'Madhusudan'),
-('CSE324', 'Radi'),
-('CSE324', 'Johra'),
-('CSE410', 'Sukarna'),
-('CSE410', 'Anne'),
-('CSE410', 'Saquib'),
-('CSE410', 'Johra'),
-('CSE462', 'Shahriar'),
-('CSE462', 'Saifur'),
-('CSE462', 'Kaysar'),
-('CSE464', 'Anik'),
-('CSE464', 'Radi'),
-('CSE464', 'Ishtiyaque'),
-('CSE472', 'Eunus'),
-('CSE472', 'Azad'),
-('CSE472', 'Shiddartha'),
-('CSE474', 'Monir Jr.'),
-('CSE474', 'Wasif'),
-('CSE474', 'Papon'),
-('CSE296', 'Tanveer'),
-('CSE296', 'Tanmoy'),
-('CSE296', 'Johra');
 
 -- --------------------------------------------------------
 
@@ -798,18 +506,17 @@ CREATE TABLE IF NOT EXISTS `feedbacks_for_course` (
   `value_7` int(3) DEFAULT NULL,
   `value_8` int(3) DEFAULT NULL,
   `value_9` int(3) DEFAULT NULL,
-  `comments` varchar(255) DEFAULT NULL,
+  `comments` text,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `feedbacks_for_course`
 --
 
 INSERT INTO `feedbacks_for_course` (`id`, `course_id`, `course_name`, `level`, `term`, `semester_id`, `year`, `expected_grade`, `instructor`, `room_no`, `w_spent_time_hour`, `value_1`, `value_2`, `value_3`, `value_4`, `value_5`, `value_6`, `value_7`, `value_8`, `value_9`, `comments`) VALUES
-(1, 'CSE103', 'Discrete Mathematics', 1, 1, 'Jan_2015', 2015, 'A+', 'sd', '212', 20, 3, 3, 2, 1, 1, 2, 3, 2, 0, 'Course comments'),
-(2, 'CSE103', 'Discrete Mathematics', 1, 1, 'Jan_2015', 2015, 'A+', 'Dr. M. Kaykobad, Dr. Mahmuda Naznin', '451', 54, 4, 3, 2, 2, 2, 3, 3, 2, 4, 'tgfh');
+(3, 'CSE103', 'Discrete Mathematics', 1, 1, 'Jan_2015', 2016, 'A+', 'Md. Iqbal Hossain, Dr. Mahmuda Naznin', '212', 40, 4, 3, 2, 1, 0, 1, 2, 3, 4, 'Comment 1 for 103');
 
 -- --------------------------------------------------------
 
@@ -858,11 +565,11 @@ CREATE TABLE IF NOT EXISTS `feedbacks_for_exit` (
   `value_25` int(3) DEFAULT NULL,
   `value_26` int(3) DEFAULT NULL,
   `value_27` int(3) DEFAULT NULL,
-  `current_involvement` varchar(100) DEFAULT NULL,
-  `next_plan` varchar(255) DEFAULT NULL,
-  `comments_on_session_jam` varchar(255) DEFAULT NULL,
-  `suggestions_for_improving` varchar(255) DEFAULT NULL,
-  `comment_in_issue` varchar(255) DEFAULT NULL,
+  `current_involvement` text,
+  `next_plan` text,
+  `comments_on_session_jam` text,
+  `suggestions_for_improving` text,
+  `comment_in_issue` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `student_id` (`student_id`),
   KEY `id` (`id`)
@@ -901,20 +608,17 @@ CREATE TABLE IF NOT EXISTS `feedbacks_for_instructor` (
   `value_13` int(3) DEFAULT NULL,
   `value_14` int(3) DEFAULT NULL,
   `value_15` int(3) DEFAULT NULL,
-  `comments` varchar(255) DEFAULT NULL,
+  `comments` text,
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `feedbacks_for_instructor`
 --
 
 INSERT INTO `feedbacks_for_instructor` (`id`, `course_id`, `course_name`, `level`, `term`, `semester_id`, `year`, `expected_grade`, `instructor`, `room_no`, `w_spent_time_hour`, `value_1`, `value_2`, `value_3`, `value_4`, `value_5`, `value_6`, `value_7`, `value_8`, `value_9`, `value_10`, `value_11`, `value_12`, `value_13`, `value_14`, `value_15`, `comments`) VALUES
-(1, 'CSE103', 'Discrete Mathematics', 1, 1, 'Jan_2015', 2015, 'A+', 'mahmudanaznin', '212', 20, 4, 4, 4, 3, 2, 2, 2, 2, 2, 1, 1, 2, 2, 0, 3, '13 comments'),
-(2, 'CSE106', 'Structured Programming Language Sessional', 1, 1, 'Jan_2015', 2016, 'A+', 'shaifur', 'dfg', 3, 4, 4, 4, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, ' '),
-(3, 'CSE106', 'Structured Programming Language Sessional', 1, 1, 'Jan_2015', 2016, 'A-', 'radireza', 'asd', 23, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, ' '),
-(4, 'CSE474', 'Pattern Recognition Sessional', 1, 1, 'Jan_2015', 2016, 'A+', 'wasif', '333', 20, 4, 3, 2, 1, 0, 1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 'Test');
+(6, 'CSE103', 'Discrete Mathematics', 1, 1, 'Jan_2015', 2016, 'B', 'iqbal', '333', 30, 4, 3, 2, 1, 0, 1, 2, 3, 4, 3, 2, 1, 0, 1, 2, 'Presentation of the course materials stimulated my interest for critical thinking in the subject area 					\r\n11 	My attention or interest was sustained during the lectures 					\r\n\r\nAdditional Questions\r\n	12 	The instructors(s) was(were) responsive to students');
 
 -- --------------------------------------------------------
 
@@ -948,7 +652,7 @@ CREATE TABLE IF NOT EXISTS `feedback_users` (
   `full_name` varchar(50) DEFAULT 'Not Available',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1759 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1762 ;
 
 --
 -- Dumping data for table `feedback_users`
@@ -1051,7 +755,7 @@ INSERT INTO `feedback_users` (`id`, `username`, `password`, `role`, `semester_id
 (1221, 'zeshun', '', 'teacher', 'All', 'Not Available'),
 (1222, 'headcse', NULL, 'superadmin', 'All', 'Head CSE BUET (by post)'),
 (1223, 'nazmul', NULL, 'superadmin', 'All', 'Nazmul Haque'),
-(1224, 'iqbal', NULL, 'admin', 'All', 'Md. Iqbal Hossain (Officer)'),
+(1224, 'iqbal', NULL, 'teacher', 'All', 'Md. Iqbal Hossain'),
 (1225, '0105041', NULL, 'student', 'All', 'Md. Shaiful Islam'),
 (1226, '0105072', NULL, 'student', 'All', 'Sujoy Das'),
 (1227, '0205059', NULL, 'student', 'All', 'Md. Muraduzzaman Mukti'),
@@ -1585,7 +1289,10 @@ INSERT INTO `feedback_users` (`id`, `username`, `password`, `role`, `semester_id
 (1755, '1305119', NULL, 'student', 'All', 'Md. Anwar Hossain Zahid'),
 (1756, '1305120', NULL, 'student', 'All', 'David Meril Tudu'),
 (1757, '1305121', NULL, 'student', 'All', 'Test1'),
-(1758, '1305122', NULL, 'student', 'All', 'Test2');
+(1758, '1305122', NULL, 'student', 'All', 'Test2'),
+(1759, '1305123', NULL, 'student', 'All', 'Test3'),
+(1760, '1305124', NULL, 'student', 'All', 'Test4'),
+(1761, '1305125', NULL, 'student', 'All', 'Test5');
 
 -- --------------------------------------------------------
 
@@ -1735,15 +1442,15 @@ CREATE TABLE IF NOT EXISTS `semester_course` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `semester_id` (`semester_id`,`student_id`,`course_id`),
   KEY `fk_cour_list_sem_cour` (`course_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2494 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2502 ;
 
 --
 -- Dumping data for table `semester_course`
 --
 
 INSERT INTO `semester_course` (`id`, `semester_id`, `student_id`, `course_id`, `course_status`) VALUES
-(4, 'Jan_2015', '0805104', 'CSE103', 1),
-(5, 'Jan_2015', '1305001', 'CSE103', 1),
+(4, 'Jan_2015', '0805104', 'CSE103', 0),
+(5, 'Jan_2015', '1305001', 'CSE103', 0),
 (6, 'Jan_2015', '1305002', 'CSE103', 0),
 (7, 'Jan_2015', '1305003', 'CSE103', 0),
 (8, 'Jan_2015', '1305004', 'CSE103', 0),
@@ -4232,8 +3939,16 @@ INSERT INTO `semester_course` (`id`, `semester_id`, `student_id`, `course_id`, `
 (2489, 'Jan_2015', '0905119', 'CSE474', 0),
 (2490, 'Jan_2015', '1305121', 'CSE474', 0),
 (2491, 'Jan_2015', '1305122', 'CSE474', 0),
-(2492, 'Jan_2015', '1305121', 'CSE103', 1),
-(2493, 'Jan_2015', '1305122', 'CSE103', 1);
+(2492, 'Jan_2015', '1305121', 'CSE103', 0),
+(2493, 'Jan_2015', '1305122', 'CSE103', 1),
+(2494, 'Jan_2015', '1305123', 'CSE105', 0),
+(2495, 'Jan_2015', '1305123', 'CSE106', 0),
+(2496, 'Jan_2015', '1305123', 'CSE309', 0),
+(2497, 'Jan_2015', '1305124', 'CSE105', 0),
+(2498, 'Jan_2015', '1305124', 'CSE106', 0),
+(2499, 'Jan_2015', '1305124', 'CSE309', 0),
+(2500, 'Jan_2015', '1305125', 'CSE105', 0),
+(2501, 'Jan_2015', '1305125', 'CSE106', 0);
 
 -- --------------------------------------------------------
 
@@ -4251,7 +3966,7 @@ CREATE TABLE IF NOT EXISTS `semester_course_instructor` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `semester_id` (`semester_id`,`student_id`,`teacher_id`,`course_id`),
   KEY `fk_cour_list_sem_cour_instr` (`course_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15709 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15722 ;
 
 --
 -- Dumping data for table `semester_course_instructor`
@@ -10577,13 +10292,13 @@ INSERT INTO `semester_course_instructor` (`id`, `semester_id`, `student_id`, `co
 (14501, 'Jan_2015', '1205120', 'CSE207', 'papon', 0),
 (14502, 'Jan_2015', '1205120', 'CSE208', 'ishtiyaque', 0),
 (14503, 'Jan_2015', '1305001', 'CSE103', 'kaykobad', 0),
-(14504, 'Jan_2015', '1305001', 'CSE103', 'mahmudanaznin', 1),
+(14504, 'Jan_2015', '1305001', 'CSE103', 'mahmudanaznin', 0),
 (14505, 'Jan_2015', '1305001', 'CSE105', 'ashikurrahman', 0),
 (14506, 'Jan_2015', '1305001', 'CSE105', 'shaifur', 0),
 (14507, 'Jan_2015', '1305001', 'CSE106', 'anik', 0),
 (14508, 'Jan_2015', '1305001', 'CSE106', 'ashikurrahman', 0),
-(14509, 'Jan_2015', '1305001', 'CSE106', 'radireza', 1),
-(14510, 'Jan_2015', '1305001', 'CSE106', 'shaifur', 1),
+(14509, 'Jan_2015', '1305001', 'CSE106', 'radireza', 0),
+(14510, 'Jan_2015', '1305001', 'CSE106', 'shaifur', 0),
 (14511, 'Jan_2015', '1305001', 'CSE106', 'tanmoycse', 0),
 (14512, 'Jan_2015', '1305001', 'CSE106', 'tanveerawal', 0),
 (14513, 'Jan_2015', '1305002', 'CSE103', 'kaykobad', 0),
@@ -11777,12 +11492,25 @@ INSERT INTO `semester_course_instructor` (`id`, `semester_id`, `student_id`, `co
 (15700, 'Jan_2015', '1305120', 'CSE106', 'shaifur', 0),
 (15701, 'Jan_2015', '1305120', 'CSE106', 'tanmoycse', 0),
 (15702, 'Jan_2015', '1305120', 'CSE106', 'tanveerawal', 0),
-(15703, 'Jan_2015', '1305121', 'CSE474', 'wasif', 1),
+(15703, 'Jan_2015', '1305121', 'CSE474', 'wasif', 0),
 (15704, 'Jan_2015', '1305122', 'CSE474', 'wasif', 0),
 (15705, 'Jan_2015', '1305121', 'CSE474', 'mdmonirulislam', 0),
 (15706, 'Jan_2015', '1305122', 'CSE474', 'mdmonirulislam', 0),
 (15707, 'Jan_2015', '1305121', 'CSE103', 'mahmudanaznin', 0),
-(15708, 'Jan_2015', '1305122', 'CSE103', 'mahmudanaznin', 0);
+(15708, 'Jan_2015', '1305122', 'CSE103', 'mahmudanaznin', 0),
+(15709, 'Jan_2015', '1305121', 'CSE474', 'iqbal', 0),
+(15710, 'Jan_2015', '1305122', 'CSE103', 'iqbal', 1),
+(15711, 'Jan_2015', '1305123', 'CSE105', 'iqbal', 0),
+(15712, 'Jan_2015', '1305124', 'CSE105', 'iqbal', 0),
+(15713, 'Jan_2015', '1305125', 'CSE105', 'iqbal', 0),
+(15714, 'Jan_2015', '1305122', 'CSE106', 'iqbal', 0),
+(15715, 'Jan_2015', '1305123', 'CSE106', 'iqbal', 0),
+(15716, 'Jan_2015', '1305124', 'CSE106', 'iqbal', 0),
+(15717, 'Jan_2015', '1305125', 'CSE106', 'iqbal', 0),
+(15718, 'Jan_2015', '1305122', 'CSE309', 'iqbal', 0),
+(15719, 'Jan_2015', '1305123', 'CSE309', 'iqbal', 0),
+(15720, 'Jan_2015', '1305124', 'CSE309', 'iqbal', 0),
+(15721, 'Jan_2015', '1305125', 'CSE309', 'iqbal', 0);
 
 -- --------------------------------------------------------
 

@@ -193,8 +193,7 @@ $semester_name = $CI->session->userdata('semester_id');
                 </table>
                 <div class="form-group">
                     <label for="comments">Comments (if any):</label>
-                    <textarea class="form-control"  name="comments" placeholder="Comments" maxlength="255"></textarea>
-
+                    <textarea class="form-control"  name="comments" placeholder="Comments"></textarea>
                 </div>
 
                 <button type="submit" class="btn btn-default">Submit</button>
