@@ -20,11 +20,11 @@ $full_name = $CI->session->userdata('full_name');
                 <tr>
                     <th>SL</th>
                     <th>Statement</th>
-                    <th>Strongly Agree</th>
-                    <th>Partial Agree</th>
-                    <th>Uncertain</th>
-                    <th>Disagree</th>
-                    <th>Strongly Disagree</th>
+                    <th>Excellent</th>
+                    <th>Very Good</th>
+                    <th>Good</th>
+                    <th>Average</th>
+                    <th>Poor</th>
                 </tr>
                 </thead>
                 <tbody>

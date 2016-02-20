@@ -20,6 +20,19 @@ class Super_admin_home extends CI_Controller
         $data['my_courses'] = $this->admin_home_model->getCourses();
         $this->load->view('super_admin_home_view', $data);
     }
+    public function course_feedback_given_list($cid, $semid, $status) {
+        $data['given_list'] = $this->admin_home_model->getCourseFeedbackGivenList($cid, $semid, $status);
+        $data['course_id']=$cid;
+        $data['course_name'] = $this->course_feedback_model->getCourseName($cid);
+        $this->load->view('course_feedback_given_list_view', $data);
+    }
+    public function instructor_feedback_given_list($cid, $semid, $tid, $status) {
+        $data['given_list'] = $this->admin_home_model->getInstructorFeedbackGivenList($cid, $semid, $tid, $status);
+        $data['course_id']=$cid;
+        $data['course_name'] = $this->course_feedback_model->getCourseName($cid);
+        $this->load->view('course_feedback_given_list_view', $data);
+    }
+
     public function feedback_summery_course_wise($cid, $semid) {
         $data['course_feedback'] = $this->instructor_home_model->getFeedbackSummeryForCourse($cid, $semid);
         $data['course_comment'] = $this->instructor_home_model->getCommentForCourse($cid, $semid);
@@ -47,8 +60,8 @@ class Super_admin_home extends CI_Controller
         $_SESSION["report_name"]='Course Feedback Summery for '.$cid.' in Semester '.$semid;
         $data = $this->instructor_home_model->getFeedbackSummeryForCourse($cid, $semid);
         $data = json_decode(json_encode($data), true);
-        $header = array('SL', 'Statements', 'S.Agr', 'P.Agr', 'Uncert', 'Disagr', 'S.Disa');
-        $w = [7, 123, 12, 12, 12, 12, 12];
+        $header = array('SL', 'Statements', 'Exclnt.', 'Very G.', 'Good', 'Avg', 'Poor', 'Avg P');
+        $w = [7, 113, 12, 12, 12, 12, 12, 10];
         $this->pdf->SetFont('Arial', '', 10);
         $this->pdf->AliasNbPages();
         $this->pdf->AddPage();
@@ -74,8 +87,8 @@ class Super_admin_home extends CI_Controller
         $_SESSION["report_name"]='Instructor Feedback Summery for '.$cid.' of '.$tid.' in Semester '.$semid;
         $data = $this->instructor_home_model->getFeedbackSummeryForTeacher($tid, $cid, $semid);
         $data = json_decode(json_encode($data), true);
-        $header = array('SL', 'Statements', 'S.Agr', 'P.Agr', 'Uncert', 'Disagr', 'S.Disa');
-        $w = [7, 123, 12, 12, 12, 12, 12];
+        $header = array('SL', 'Statements', 'Exclnt.', 'Very G.', 'Good', 'Avg', 'Poor', 'Avg P.');
+        $w = [7, 113, 12, 12, 12, 12, 12, 10];
         $this->pdf->SetFont('Arial', '', 10);
         $this->pdf->AliasNbPages();
         $this->pdf->AddPage();
@@ -109,7 +122,7 @@ class Super_admin_home extends CI_Controller
         $_SESSION["report_name"]='Exit Feedback Summery';
         $data = $this->admin_home_model->getFeedbackSummeryForExit();
         $data = json_decode(json_encode($data), true);
-        $header = array('SL', 'Statements', 'S.Agr', 'P.Agr', 'Uncert', 'Disagr', 'S.Disa');
+        $header = array('SL', 'Statements', 'Exclnt.', 'Very G.', 'Good', 'Avg', 'Poor');
         $w = [7, 123, 12, 12, 12, 12, 12];
         $this->pdf->SetFont('Arial', '', 10);
         $this->pdf->AliasNbPages();

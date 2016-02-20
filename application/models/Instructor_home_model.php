@@ -9,13 +9,41 @@ class Instructor_home_model extends CI_Model
         $this->load->database();
     }
 
-    public function getCourses($tid) {
-        $this->db->select("course_id, semester_id");
-        $this->db->distinct("course_id, semester_id");
-        $this->db->from("semester_course_instructor");
-        $this->db->where("teacher_id", $tid);
-        $this->db->order_by("semester_id, course_id");
+    /*public function getCourses1($tid) {
+        $this->db->select("ci.course_id, ci.semester_id, c.course_name, ci.teacher_id, u.full_name");
+        $this->db->distinct("ci.course_id, ci.semester_id");
+        $this->db->from("semester_course_instructor ci, feedback_users u, course_list c");
+        $this->db->where("`ci.teacher_id`=`u.username`");
+        $this->db->where("`ci.course_id`=`c.course_id`");
+        $this->db->where("ci.teacher_id", $tid);
+        $this->db->order_by("ci.semester_id, ci.course_id");
         $query = $this->db->get();
+        return $result = $query->result();
+    }*/
+    public function getCourses($tid) {
+        $query=$this->db->query("SELECT DISTINCT tt1.*, IFNULL(instructor_given, 0) AS instructor_given FROM
+(SELECT t1.*, IFNULL(course_given, 0) AS course_given FROM
+(SELECT DISTINCT
+  `s`.`teacher_id`,
+  `u`.`full_name`,
+  `s`.`course_id`,
+  `c`.`course_name`,
+  `s`.`semester_id`
+FROM
+  `semester_course_instructor` `s`,
+  `feedback_users` `u`,
+  `course_list` `c`
+WHERE `s`.`teacher_id` = `u`.`username`
+  AND `s`.`teacher_id` = "."'".$tid."'"."
+  AND `s`.`course_id` = `c`.`course_id`) t1
+  LEFT JOIN
+(SELECT course_id, COUNT(course_id) AS course_given FROM feedbacks_for_course GROUP BY course_id, semester_id) t2
+ON t1.course_id = t2.course_id) tt1
+LEFT JOIN
+(SELECT instructor, course_id, COUNT(course_id) AS instructor_given FROM feedbacks_for_instructor GROUP BY course_id, instructor, semester_id) tt2
+ON tt1.course_id = tt2.course_id AND tt1.teacher_id = tt2.instructor
+ORDER BY tt1.course_id, tt1.teacher_id
+");
         return $result = $query->result();
     }
 

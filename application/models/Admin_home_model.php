@@ -9,7 +9,6 @@ class Admin_home_model extends CI_Model
         $this->load->database();
     }
 
-
     public function getCourses() {
         $query=$this->db->query("SELECT DISTINCT tt1.*, IFNULL(instructor_given, 0) AS instructor_given FROM
 (SELECT t1.*, IFNULL(course_given, 0) AS course_given FROM
@@ -304,6 +303,30 @@ ORDER BY xx.id");
         (SELECT 'Total' AS grade, COUNT(expected_grade) AS counts FROM feedbacks_for_instructor WHERE course_id='".$cid."' AND semester_id='".$semester_id."' AND instructor='".$tid."' )");
         return $result = $query->result();
     }
+
+    public function getCourseFeedbackGivenList($cid, $semid, $status) {
+        $this->db->select('c.student_id, u.full_name');
+        $this->db->from('semester_course c, feedback_users u');
+        $this->db->where('`c`.`student_id`=`u`.username');
+        $this->db->where('c.course_id',$cid);
+        $this->db->where('`c`.`course_status`',$status);
+        //$this->db->where('t.instructor',$tid);
+        $this->db->where('c.semester_id',$semid);
+        $query = $this->db->get();
+        return $result = $query->result();
+    }
+    public function getInstructorFeedbackGivenList($cid, $semid, $tid, $status) {
+        $this->db->select('c.student_id, u.full_name');
+        $this->db->from('semester_course_instructor c, feedback_users u');
+        $this->db->where('`c`.`student_id`=`u`.username');
+        $this->db->where('c.course_id',$cid);
+        $this->db->where('`c`.`teacher_status`',$status);
+        $this->db->where('c.teacher_id',$tid);
+        $this->db->where('c.semester_id',$semid);
+        $query = $this->db->get();
+        return $result = $query->result();
+    }
+
     function __destruct() {
         $this->db->close();
     }

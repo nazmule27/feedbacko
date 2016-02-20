@@ -182,10 +182,22 @@ function NbLines($w,$txt)
         // Data
         $fill = false;
         $i=1;
+        $each_avg=0;
         foreach ($data as $row) {
-            $this->Row(array($i, $row["question"],$row["count4"],$row["count3"],$row["count2"],$row["count1"],$row["count0"]));
+            $total=($row["count4"])+($row["count3"])+($row["count2"])+($row["count1"])+($row["count0"]);
+            $points=(($row["count4"])*5)+(($row["count3"])*4)+(($row["count2"])*3)+(($row["count1"])*2)+(($row["count0"])*1);
+            if($total!=0){
+                $each_avg+=($points/$total);
+                $each=$points/$total;
+            }
+            else $each='N/A';
+
+            $this->Row(array($i, $row["question"],$row["count4"],$row["count3"],$row["count2"],$row["count1"],$row["count0"], $each));
             $i++;
         }
+        $this->Ln();
+        $this->Cell(50, 7, 'Overall Average Point: '.round($each_avg/($i-1),2), 1, 0, 'C', true);
+
     }
     function CourseFeedbackComments($header, $w, $data) {
         // Colors, line width and bold font
@@ -209,6 +221,7 @@ function NbLines($w,$txt)
             $this->Row(array($i, $row["comments"]));
             $i++;
         }
+
     }
 }
 ?>

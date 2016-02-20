@@ -18,15 +18,16 @@ $full_name = $CI->session->userdata('full_name');
                 <tr>
                     <th>SL</th>
                     <th>Statement</th>
-                    <th>Strongly Agree</th>
-                    <th>Partial Agree</th>
-                    <th>Uncertain</th>
-                    <th>Disagree</th>
-                    <th>Strongly Disagree</th>
+                    <th width="50">Excellent</th>
+                    <th width="50">Very Good</th>
+                    <th width="50">Good</th>
+                    <th width="50">Average</th>
+                    <th width="50">Poor</th>
+                    <th width="50">Average point</th>
                 </tr>
                 </thead>
                 <tbody>
-                <?php $k=1; for ($i = 0; $i < count($course_feedback); ++$i) {?>
+                <?php $k=1; $each_avg=0; for ($i = 0; $i < count($course_feedback); ++$i) {?>
                     <tr>
                         <td><?php echo $k;?></td>
                         <td><?php echo $course_feedback[$i]->question;?></td>
@@ -35,10 +36,24 @@ $full_name = $CI->session->userdata('full_name');
                         <td><?php echo $course_feedback[$i]->count2;?></td>
                         <td><?php echo $course_feedback[$i]->count1;?></td>
                         <td><?php echo $course_feedback[$i]->count0;?></td>
+                        <td>
+                            <?php
+                            $total=($course_feedback[$i]->count4)+($course_feedback[$i]->count3)+($course_feedback[$i]->count2)+($course_feedback[$i]->count1)+($course_feedback[$i]->count0);
+                            $points=(($course_feedback[$i]->count4)*5)+(($course_feedback[$i]->count3)*4)+(($course_feedback[$i]->count2)*3)+(($course_feedback[$i]->count1)*2)+(($course_feedback[$i]->count0)*1);
+                            if($total!=0){
+                                $each_avg+=($points/$total);
+                                echo $points/$total;
+                            }
+                            else echo 'N/A';
+                            ?>
+                        </td>
                     </tr>
                     <?php $k++;} ?>
                 </tbody>
             </table>
+            <div class="avg-point">
+                <?php echo '<b>Overall Average Point: '.round($each_avg/9,2).'</b>';?>
+            </div>
             <h4>Expected Grade</h4>
             <br>
             <div class="row">
@@ -64,7 +79,7 @@ $full_name = $CI->session->userdata('full_name');
                 </div>
                 <div class="col-lg-6">
                     <p>
-                        Average weekly spent hour: <?php echo $avg_spent_hour_course[0]->w_spent_time_hour; ?>
+                        Average weekly spent hour for this course outside the class (Appx.): <?php echo $avg_spent_hour_course[0]->w_spent_time_hour; ?>
                     </p>
                 </div>
             </div>

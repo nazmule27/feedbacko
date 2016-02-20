@@ -20,6 +20,19 @@ class Instructor_home extends CI_Controller
         $data['my_courses'] = $this->instructor_home_model->getCourses($tid);
         $this->load->view('instructor_home_view', $data);
     }
+
+    public function course_feedback_given_list($cid, $semid, $status) {
+        $data['given_list'] = $this->admin_home_model->getCourseFeedbackGivenList($cid, $semid, $status);
+        $data['course_id']=$cid;
+        $data['course_name'] = $this->course_feedback_model->getCourseName($cid);
+        $this->load->view('course_feedback_given_list_view', $data);
+    }
+    public function instructor_feedback_given_list($cid, $semid, $tid, $status) {
+        $data['given_list'] = $this->admin_home_model->getInstructorFeedbackGivenList($cid, $semid, $tid, $status);
+        $data['course_id']=$cid;
+        $data['course_name'] = $this->course_feedback_model->getCourseName($cid);
+        $this->load->view('course_feedback_given_list_view', $data);
+    }
     public function feedback_summery_course_wise($cid, $semid) {
         $data['course_feedback'] = $this->instructor_home_model->getFeedbackSummeryForCourse($cid, $semid);
         $data['course_comment'] = $this->instructor_home_model->getCommentForCourse($cid, $semid);

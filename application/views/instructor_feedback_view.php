@@ -70,7 +70,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <input type="text" class="form-control" name="room_no">
                     </div>
                     <div class="form-group">
-                        <label for="w_spent_time_hour">Weekly Spent Hour:</label>
+                        <label for="w_spent_time_hour">Weekly Spent Hour for this Course Outside the Class (Appx.):</label>
                         <input type="text" class="form-control" name="w_spent_time_hour" pattern="^[0-9]+\d?" placeholder="in hour" required>
                     </div>
                     <div class="form-group">
@@ -91,11 +91,11 @@ $semester_name = $CI->session->userdata('semester_id');
                             <th>Focus</th>
                             <th>SL</th>
                             <th width="1500">Statement for Evaluation</th>
-                            <th>Strongly Agree</th>
-                            <th>Partially Agree</th>
-                            <th>Uncertain</th>
-                            <th>Disagree</th>
-                            <th>Strongly Disagree</th>
+                            <th>Excellent</th>
+                            <th>Very Good</th>
+                            <th>Good</th>
+                            <th>Average</th>
+                            <th>Poor</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -13,14 +13,18 @@ $full_name = $CI->session->userdata('full_name');
             <h4>Feedback List:</h4>
             <br>
             <div class="row">
-                <div class="col-md-10 col-ms-10 col-xs-12">
+                <div class="col-md-12 col-ms-12 col-xs-12">
                     <table class="table">
                         <thead>
                         <tr>
                             <th>SL</th>
                             <!--<th>Semester Name</th>-->
                             <th>Course Summary (Count)</th>
+                            <th width="80">Course Feedback Given List</th>
+                            <th width="110">Course Feedback Not Given List</th>
                             <th>Instructor Summary (Count)</th>
+                            <th width="80">Instructor Feedback Given List</th>
+                            <th width="110">Instructor Feedback Not Given List</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -31,13 +35,25 @@ $full_name = $CI->session->userdata('full_name');
                                 <td>
                                     <?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_course_wise/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'">'.$my_courses[$i]->course_name.' ('.$my_courses[$i]->course_id.') ('.$my_courses[$i]->course_given.')'.' </a>' ?>
                                 </td>
+                                <td>
+                                    <?php echo '<a href="'.base_url().'super_admin_home/course_feedback_given_list/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'/1'.'">'.'Given List'.'</a>' ?>
+                                </td>
+                                <td>
+                                    <?php echo '<a href="'.base_url().'super_admin_home/course_feedback_given_list/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'/0'.'">'.'Not Given List'.'</a>' ?>
+                                </td>
                                 <td><?php echo '<a href="'.base_url().'super_admin_home/feedback_summery_teacher_wise/'.$my_courses[$i]->teacher_id.'/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'"> '.$my_courses[$i]->full_name.' ('.$my_courses[$i]->teacher_id.') ('.$my_courses[$i]->instructor_given.')'.'</a>' ?></td>
+                                <td>
+                                    <?php echo '<a href="'.base_url().'super_admin_home/instructor_feedback_given_list/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'/'.$my_courses[$i]->teacher_id.'/1'.'">'.'Given List'.'</a>' ?>
+                                </td>
+                                <td>
+                                    <?php echo '<a href="'.base_url().'super_admin_home/instructor_feedback_given_list/'.$my_courses[$i]->course_id.'/'.$my_courses[$i]->semester_id.'/'.$my_courses[$i]->teacher_id.'/0'.'">'.'Not Given List'.'</a>' ?>
+                                </td>
                             </tr>
                             <?php $k++;} ?>
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-2 col-ms-2 col-xs-12">
+                <div class="col-md-12 col-ms-12 col-xs-12">
                     <a target="_blank" href="<?php echo base_url();?>super_admin_home/exit_feedback_summery">Exit Feedback Summary</a>
                 </div>
             </div>
