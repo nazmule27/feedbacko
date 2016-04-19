@@ -17,11 +17,11 @@ class Login extends CI_Controller
             $this->load->library('Radius');
             $ip_radius_server="172.16.101.11";
             $shared_secret="testing123*cse";
-            $radius = new Radius($ip_radius_server, $shared_secret);
-            $resultRadius = $radius->AccessRequest($username, $password);
+            //$radius = new Radius($ip_radius_server, $shared_secret);
+            //$resultRadius = $radius->AccessRequest($username, $password);
 
             //$result = $this->login->validate_user($_POST);
-            if(!empty($resultRadius)) {
+            //if(!empty($resultRadius)) {
                 $result = $this->login->data_user($_POST);
                 $result_sem = $this->login->semester_user();
                 $std_date = $this->login->std_date();
@@ -70,10 +70,10 @@ class Login extends CI_Controller
                     $this->session->set_flashdata('login_fail', 'This username is not registered in this system,<br> Please contact to admin!');
                     redirect('login');
                 }
-            } else {
+            /*} else {
                 $this->session->set_flashdata('login_fail', 'Username or password is wrong!');
                 redirect('login');
-            }
+            }*/
         }
 
         $this->load->view("login_view");
