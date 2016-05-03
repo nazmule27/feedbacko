@@ -8,7 +8,7 @@ $semester_name = $CI->session->userdata('semester_id');
         <div class="col-lg-12 col-md-12 col-sm-12">
             <h3>Instructor Feedback</h3>
             <br>
-            <form role="form" method="post" action="<?=base_url();?>instructor_feedback/insertFeedbackInstructor">
+            <form role="form" id="feedback_form" method="post" action="<?=base_url();?>instructor_feedback/insertFeedbackInstructor">
                 <div class="form-inline">
                     <div class="form-group">
                         <label for="course_id">Course ID:</label>
@@ -19,7 +19,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <input type="text" class="form-control width300" name="course_name"  value="<?php echo $course_name[0]->course_name;?>" required readonly>
                     </div>
                     <div class="form-group">
-                        <label for="level">Level:</label>
+                        <label for="level">Your Current Level:</label>
                         <select name="level" class="form-control" required>
                             <option value="">Select One</option>
                             <option value="1">Level 1</option>
@@ -50,7 +50,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <input type="hidden" class="form-control" name="semester_name" value="<?php echo $semester_name;?>">
                     </div>
                     <div class="form-group">
-                        <label for="expected_grade">Expected Grade:</label>
+                        <label for="expected_grade">Expected Grade in this Course:</label>
                         <select name="expected_grade" class="form-control" required>
                             <option value="">Select One</option>
                             <option value="A+">A+</option>
@@ -67,11 +67,11 @@ $semester_name = $CI->session->userdata('semester_id');
                     </div>
                     <div class="form-group">
                         <label for="room_no">Room No:</label>
-                        <input type="text" class="form-control" name="room_no">
+                        <input type="text" class="form-control" maxlength="3" name="room_no" pattern="^[0-9]{3}" required>
                     </div>
                     <div class="form-group">
-                        <label for="w_spent_time_hour">Weekly Spent Hour for this Course Outside the Class (Appx.):</label>
-                        <input type="text" class="form-control" name="w_spent_time_hour" pattern="^[0-9]+\d?" placeholder="in hour" required>
+                        <label for="w_spent_time_hour">Weekly spent hours for this course outside the class (Appr.):</label>
+                        <input type="text" class="form-control" name="w_spent_time_hour" maxlength="2" pattern="^[0-9]{1,2}" placeholder="in hours" required>
                     </div>
                     <div class="form-group">
                         <label for="instructor">Instructor:</label>
@@ -129,7 +129,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </tr>
                         <tr>
                             <td>4</td>
-                            <td class="tLeft">The instructor(s) was(were prompt in declaring class tests and results)</td>
+                            <td class="tLeft">The instructor(s) was (were) prompt in declaring class tests and results</td>
                             <td><input type="radio" value="4" name="question_4" required></td>
                             <td><input type="radio" value="3" name="question_4"></td>
                             <td><input type="radio" value="2" name="question_4"></td>
@@ -148,7 +148,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <tr>
                             <td  rowspan="6"><p class="">Quality of Delivery</p></td>
                             <td>6</td>
-                            <td class="tLeft">The instructor(s) wase(were) well-prepared for the classes</td>
+                            <td class="tLeft">The instructor(s) was (were) well-prepared for the classes</td>
                             <td><input type="radio" value="4" name="question_6" required></td>
                             <td><input type="radio" value="3" name="question_6"></td>
                             <td><input type="radio" value="2" name="question_6"></td>
@@ -166,7 +166,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </tr>
                         <tr>
                             <td>8</td>
-                            <td>The instructor(s) was(were) clear enough to hear and follow during the instruction</td>
+                            <td>The instructor(s) was (were) clear enough to hear and follow during the instructions</td>
                             <td><input type="radio" value="4" name="question_8" required></td>
                             <td><input type="radio" value="3" name="question_8"></td>
                             <td><input type="radio" value="2" name="question_8"></td>
@@ -175,7 +175,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </tr>
                         <tr>
                             <td>9</td>
-                            <td>Concepts, ideas, and points where illustrated with examples, applications, and analogies</td>
+                            <td>Concepts, ideas, and points were illustrated with examples, applications, and analogies</td>
                             <td><input type="radio" value="4" name="question_9" required></td>
                             <td><input type="radio" value="3" name="question_9"></td>
                             <td><input type="radio" value="2" name="question_9"></td>
@@ -203,7 +203,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <tr>
                             <td rowspan="4"><p class="">Additional Questions</p></td>
                             <td>12</td>
-                            <td class="tLeft">The instructors(s) was(were) responsive to students' need and problems either during or outside lectures</td>
+                            <td class="tLeft">The instructors(s) was (were) responsive to students' need and problems either during or outside lectures</td>
                             <td><input type="radio" value="4" name="question_12" required></td>
                             <td><input type="radio" value="3" name="question_12"></td>
                             <td><input type="radio" value="2" name="question_12"></td>
@@ -212,7 +212,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </tr>
                         <tr>
                             <td>13</td>
-                            <td>The lecture demonstrated importance of the subject</td>
+                            <td>The lectures demonstrated importance of the subject</td>
                             <td><input type="radio" value="4" name="question_13" required></td>
                             <td><input type="radio" value="3" name="question_13"></td>
                             <td><input type="radio" value="2" name="question_13"></td>
@@ -221,7 +221,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </tr>
                         <tr>
                             <td>14</td>
-                            <td>Evaluation of the instructor(s) was fair and unbaised</td>
+                            <td>Evaluation of the instructor(s) was fair and unbiased</td>
                             <td><input type="radio" value="4" name="question_14" required></td>
                             <td><input type="radio" value="3" name="question_14"></td>
                             <td><input type="radio" value="2" name="question_14"></td>
@@ -244,7 +244,8 @@ $semester_name = $CI->session->userdata('semester_id');
                     <textarea class="form-control"  name="comments" placeholder="Comments"></textarea>
 
                 </div>
-
+                <div class="g-recaptcha" data-sitekey="6Lf0uh4TAAAAADnhHiGYewquDs3mTsVAGzPLZ0Ma"></div>
+                <div id="msg_captcha" style="color: red"></div>
                 <button type="submit" class="btn btn-default">Submit</button>
             </form>
         </div>

@@ -97,3 +97,18 @@ function isPasswordMatch() {
 $("td").click(function () {
     $(this).find('input:radio').attr('checked', true);
 });
+
+
+$('#feedback_form').submit(function () {
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('msg_captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    if(v.length != 0)
+    {
+        /*document.getElementById('msg_captcha').innerHTML="Captcha completed";*/
+        return true;
+    }
+});

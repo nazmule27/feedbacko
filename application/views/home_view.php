@@ -31,8 +31,8 @@ $full_name = $CI->session->userdata('full_name');
                                 $status='btn disabled disableCus';
                             }
                         ?>
-                        <!--<td>Provide Feedback for <a target="_blank" class="<?php /*echo $status */?>" href="<?/*=base_url();*/?>course_feedback?cid=<?php /*echo $course[$i]->course_id;*/?>"> <?php /*echo $course[$i]->course_id.': '.$course[$i]->course_name;*/?> </a></td>-->
-                        <td><?php echo $course[$i]->course_id.': '.$course[$i]->course_name;?></td>
+                        <td>Provide Feedback for <a target="_blank" class="<?php echo $status ?>" href="<?=base_url();?>course_feedback?cid=<?php echo $course[$i]->course_id;?>"> <?php echo $course[$i]->course_id.': '.$course[$i]->course_name;?> </a></td>
+                        <!--<td><?php /*echo $course[$i]->course_id.': '.$course[$i]->course_name;*/?></td>-->
                         <td>
                         <?php
                             $teachers=explode(",", $course[$i]->teacher_id);

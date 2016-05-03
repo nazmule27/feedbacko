@@ -9,6 +9,7 @@
         <script type="text/javascript" src="<?=base_url();?>assets/js/vendor/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?=base_url();?>assets/js/nav/_scripts/nav-min.js"></script>
         <script type="text/javascript" src="<?=base_url();?>assets/js/datetimepicker/jquery.datetimepicker.js"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <script type="text/javascript" src="<?=base_url();?>assets/js/main.js"></script>
     </body>
 </html>

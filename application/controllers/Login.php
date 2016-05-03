@@ -8,7 +8,6 @@ class Login extends CI_Controller
         parent::__construct();
         $this->load->model("login_model", "login");
     }
-
     public function index() {
         if($_POST) {
             $username = $this->input->post('username');
