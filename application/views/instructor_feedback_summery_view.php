@@ -79,7 +79,7 @@ $full_name = $CI->session->userdata('full_name');
                 </div>
                 <div class="col-lg-6">
                     <p>
-                        Average weekly spent hour for this course outside the class (Appx.): <?php echo $avg_spent_hour_course_instructor[0]->w_spent_time_hour; ?>
+                        Average weekly spent hour for this course outside the class (Approx.): <?php echo $avg_spent_hour_course_instructor[0]->w_spent_time_hour; ?>
                     </p>
                 </div>
             </div>

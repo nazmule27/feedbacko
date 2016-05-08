@@ -15,11 +15,11 @@ $semester_name = $CI->session->userdata('semester_id');
                         <input type="text" class="form-control" name="course_id" value="<?php echo $this->input->get('cid'); ?>"  readonly required>
                     </div>
                     <div class="form-group">
-                        <label for="course_name">Course Name:</label>
+                        <label for="course_name">Course name:</label>
                         <input type="text" class="form-control width300" name="course_name"  value="<?php echo $course_name[0]->course_name;?>" required readonly>
                     </div>
                     <div class="form-group">
-                        <label for="level">Your Current Level:</label>
+                        <label for="level">Your current level:</label>
                         <select name="level" class="form-control" required>
                             <option value="">Select One</option>
                             <option value="1">Level 1</option>
@@ -29,7 +29,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="term">Term:</label>
+                        <label for="term">term:</label>
                         <select name="term" class="form-control" required>
                             <option value="">Select One</option>
                             <option value="1">Term 1</option>
@@ -50,7 +50,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <input type="hidden" class="form-control" name="semester_name" value="<?php echo $semester_name;?>">
                     </div>
                     <div class="form-group">
-                        <label for="expected_grade">Expected Grade in this Course:</label>
+                        <label for="expected_grade">Expected grade in this course:</label>
                         <select name="expected_grade" class="form-control" required>
                             <option value="">Select One</option>
                             <option value="A+">A+</option>
@@ -66,7 +66,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="room_no">Room No:</label>
+                        <label for="room_no">Room no:</label>
                         <input type="text" class="form-control" maxlength="3" name="room_no" pattern="^[0-9]{3}" required>
                     </div>
                     <div class="form-group">
