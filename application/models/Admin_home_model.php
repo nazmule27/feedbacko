@@ -327,6 +327,7 @@ ORDER BY xx.id");
         return $result = $query->result();
     }
 
+
     function __destruct() {
         $this->db->close();
     }

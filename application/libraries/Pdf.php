@@ -223,5 +223,29 @@ function NbLines($w,$txt)
         }
 
     }
+    function CourseFeedbackGivenList($header, $w, $data) {
+        // Colors, line width and bold font
+        $this->SetFillColor(200, 200, 200);
+        $this->SetTextColor(6);
+        $this->SetDrawColor(10, 20, 20);
+        $this->SetLineWidth(.3);
+        $this->SetFont('', 'B');
+        // Header
+        for ($i = 0; $i < count($header); $i++)
+            $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C', true);
+        $this->Ln();
+        // Color and font restoration
+        $this->SetFillColor(224, 235, 255);
+        $this->SetTextColor(0);
+        $this->SetFont('');
+        // Data
+        $fill = false;
+        $i=1;
+        foreach ($data as $row) {
+            $this->Row(array($i, $row["student_id"], $row["full_name"]));
+            $i++;
+        }
+
+    }
 }
 ?>

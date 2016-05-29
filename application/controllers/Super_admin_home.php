@@ -23,14 +23,19 @@ class Super_admin_home extends CI_Controller
     public function course_feedback_given_list($cid, $semid, $status) {
         $data['given_list'] = $this->admin_home_model->getCourseFeedbackGivenList($cid, $semid, $status);
         $data['course_id']=$cid;
+        $data['semester_id']=$semid;
+        $data['status']=$status;
         $data['course_name'] = $this->course_feedback_model->getCourseName($cid);
         $this->load->view('course_feedback_given_list_view', $data);
     }
     public function instructor_feedback_given_list($cid, $semid, $tid, $status) {
         $data['given_list'] = $this->admin_home_model->getInstructorFeedbackGivenList($cid, $semid, $tid, $status);
         $data['course_id']=$cid;
+        $data['semester_id']=$semid;
+        $data['teacher_id']=$tid;
+        $data['status']=$status;
         $data['course_name'] = $this->course_feedback_model->getCourseName($cid);
-        $this->load->view('course_feedback_given_list_view', $data);
+        $this->load->view('instructor_feedback_given_list_view', $data);
     }
 
     public function feedback_summery_course_wise($cid, $semid) {
@@ -182,6 +187,44 @@ class Super_admin_home extends CI_Controller
         $this->pdf->SetWidths($w);
         $this->pdf->CourseFeedbackComments($header,$w,$data);
         $this->pdf->Output('Exit_comments_next_plan.pdf', 'I');
+    }
+    public function course_given_list_pdf($cid, $semid, $status){
+        if($status==0){
+            $isNot='not given';
+        }
+        else {
+            $isNot='given';
+        }
+        $_SESSION["report_name"]='course feedback '.$isNot.' student list of '.$cid.' in semester '.$semid;
+        $data = $this->admin_home_model->getCourseFeedbackGivenList($cid, $semid, $status);
+        $data = json_decode(json_encode($data), true);
+        $header = array('SL', 'Student ID', 'Name');
+        $w = [10, 50, 130];
+        $this->pdf->SetFont('Arial', '', 10);
+        $this->pdf->AliasNbPages();
+        $this->pdf->AddPage();
+        $this->pdf->SetWidths($w);
+        $this->pdf->CourseFeedbackGivenList($header,$w,$data);
+        $this->pdf->Output('course_given_list.pdf', 'I');
+    }
+    public function instructor_given_list_pdf($cid, $semid, $tid, $status){
+        if($status==0){
+            $isNot='not given';
+        }
+        else {
+            $isNot='given';
+        }
+        $_SESSION["report_name"]='instructor feedback '.$isNot.' student list of '.$cid.' for '.$tid.' in semester '.$semid;
+        $data = $this->admin_home_model->getInstructorFeedbackGivenList($cid, $semid, $tid, $status);
+        $data = json_decode(json_encode($data), true);
+        $header = array('SL', 'Student ID', 'Name');
+        $w = [10, 50, 130];
+        $this->pdf->SetFont('Arial', '', 10);
+        $this->pdf->AliasNbPages();
+        $this->pdf->AddPage();
+        $this->pdf->SetWidths($w);
+        $this->pdf->CourseFeedbackGivenList($header,$w,$data);
+        $this->pdf->Output('instructor_given_list.pdf', 'I');
     }
 
 }
