@@ -11,7 +11,7 @@ class Super_admin_home extends CI_Controller
         $this->load->model('admin_home_model');
         $this->load->model('instructor_home_model');
         $this->load->model('course_feedback_model');
-        if((($this->session->userdata('role'))!=='superadmin')&&(($this->session->userdata('role'))!=='admin')&&(($this->session->userdata('role'))!=='teacher')) {
+        if((($this->session->userdata('role'))!=='superadmin')&&(($this->session->userdata('role'))!=='admin')) {
             $this->session->set_flashdata('flash_data', 'You don\'t have access!');
             redirect('login');
         }

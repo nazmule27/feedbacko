@@ -18,8 +18,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://localhost/feedback/';
-//$config['base_url'] = 'http://cse.buet.ac.bd/feedback/';
+//$config['base_url'] = 'http://localhost/feedback/';
+$config['base_url'] = 'http://cse.buet.ac.bd/feedback/';
 //$config['base_url'] = 'http://172.16.101.5/feedback/';
 
 /*

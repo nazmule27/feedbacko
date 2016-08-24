@@ -33,6 +33,15 @@ class Login_model extends CI_Model
         $query = $this->db->get();
         return $result = $query->row();
     }
+    public function data_course($data) {
+        $this->db->distinct();
+        $this->db->select("i.course_id");
+        $this->db->from("feedback_users u, semester_course_instructor i");
+        $this->db->where('username', $data['username']);
+        $this->db->where('u.`username`=i.`teacher_id`');
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function std_date() {
         $this->db->select("date_id, title, start_date, end_date");
         $this->db->from("date_range");

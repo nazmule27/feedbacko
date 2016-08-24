@@ -17,7 +17,7 @@ else {
     <div class="row">
         <div class="col-md-12 col-ms-12 col-xs-12">
             <h4>Course feedback <?php echo $inNot?> list of '<?php echo $course_name[0]->course_name; ?>':</h4>
-            <a class="download-pdf" target="_blank" title="Download as PDF" href="<?=base_url().'super_admin_home/course_given_list_pdf/'.$course_id.'/'.$semester_id.'/'.$status;?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""> </a>
+            <a class="download-pdf" target="_blank" title="Download as PDF" href="<?=base_url().'instructor_home/course_given_list_pdf/'.$course_id.'/'.$semester_id.'/'.$status;?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""> </a>
             <br>
             <div class="row">
                 <div class="col-md-10 col-ms-10 col-xs-12">

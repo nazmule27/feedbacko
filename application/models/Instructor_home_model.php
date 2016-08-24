@@ -341,7 +341,16 @@ WHERE xx.id=yy.qid");
         $query = $this->db->get();
         return $result = $query->result();
     }
-
+    public function checkCourse($tid, $cid, $semid) {
+        $this->db->select("course_id");
+        $this->db->from("semester_course_instructor");
+        $this->db->where("teacher_id", $tid);
+        $this->db->where("course_id", $cid);
+        $this->db->where("semester_id", $semid);
+        $this->db->order_by("id");
+        $query = $this->db->get();
+        return $result = $query->result();
+    }
 
     function __destruct() {
         $this->db->close();

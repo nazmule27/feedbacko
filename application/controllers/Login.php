@@ -33,8 +33,8 @@ class Login extends CI_Controller
                         'full_name' => $result->full_name,
                         //'semester_id' => $result->semester_id,
                         'semester_id' => $result_sem->semester_name,
-                    ];
 
+                    ];
                     $this->session->set_userdata($data);
                     if($result->role=='student') {
                         if(date('Y-m-d h:i:s')<=$std_date[0]->start_date) {

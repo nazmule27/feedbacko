@@ -45,7 +45,7 @@ $full_name = $CI->session->userdata('full_name');
         <div class="col-lg-12">
             <h4>
                 Comments for Next Plan:
-                <a class="download-pdf" href="<?php echo base_url().'super_admin_home/exit_comments_for_next_plan_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
+                <a class="download-pdf" href="<?php echo base_url().'instructor_home/exit_comments_for_next_plan_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
             </h4>
             <br>
             <?php $k=1; for ($i = 0; $i < count($next_plan_comments); ++$i) {?>
@@ -55,7 +55,7 @@ $full_name = $CI->session->userdata('full_name');
         <div class="col-lg-12">
             <h4>
                 Comments for Session Jam:
-                <a class="download-pdf" href="<?php echo base_url().'super_admin_home/exit_comments_for_session_jam_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
+                <a class="download-pdf" href="<?php echo base_url().'instructor_home/exit_comments_for_session_jam_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
             </h4>
             <br>
             <?php $k=1; for ($i = 0; $i < count($comments_on_session_jam); ++$i) {?>
@@ -65,7 +65,7 @@ $full_name = $CI->session->userdata('full_name');
         <div class="col-lg-12">
             <h4>
                 Comments for Improving:
-                <a class="download-pdf" href="<?php echo base_url().'super_admin_home/exit_comments_for_improving_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
+                <a class="download-pdf" href="<?php echo base_url().'instructor_home/exit_comments_for_improving_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
             </h4>
             <br>
             <?php $k=1; for ($i = 0; $i < count($suggestions_for_improving); ++$i) {?>
@@ -75,7 +75,7 @@ $full_name = $CI->session->userdata('full_name');
         <div class="col-lg-12">
             <h4>
                 Comments for Issue:
-                <a class="download-pdf" href="<?php echo base_url().'super_admin_home/exit_comments_for_issue_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
+                <a class="download-pdf" href="<?php echo base_url().'instructor_home/exit_comments_for_issue_pdf'?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
             </h4>
             <br>
             <?php $k=1; for ($i = 0; $i < count($comment_in_issue); ++$i) {?>
