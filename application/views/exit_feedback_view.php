@@ -33,15 +33,15 @@ $this->load->view('common/header');
                     <br>
                     <div class="form-group">
                         <label for="study_hour_outside_class">Studying outside class during term:</label>
-                        <input type="text" class="form-control" name="study_hour_outside_class" maxlength="5" pattern="^[0-9]+\d?" placeholder="in hour" required>
+                        <input type="text" class="form-control" name="study_hour_outside_class" maxlength="3" pattern="^[0-9]+\d?" placeholder="in hour" required>
                     </div>
                     <div class="form-group">
                         <label for="study_hour_during_pl">Studying during PL:</label>
-                        <input type="text" class="form-control" name="study_hour_during_pl" maxlength="5" pattern="^[0-9]+\d?" placeholder="in hour" required>
+                        <input type="text" class="form-control" name="study_hour_during_pl" maxlength="3" pattern="^[0-9]+\d?" placeholder="in hour" required>
                     </div>
                     <div class="form-group">
                         <label for="study_hour_during_exam">Studying during exam:</label>
-                        <input type="text" class="form-control" name="study_hour_during_exam" maxlength="5" pattern="^[0-9]+\d?" placeholder="in hour" required>
+                        <input type="text" class="form-control" name="study_hour_during_exam" maxlength="3" pattern="^[0-9]+\d?" placeholder="in hour" required>
                     </div>
                     <br>
                     <br>

@@ -18,7 +18,7 @@ class Manage_user extends CI_Controller
         $this->load->view('manage_user_view', $data);
     }
     public function user_pdf(){
-        $_SESSION["report_name"]='Feedback Users';
+        $_SESSION["report_name"]='Feedback Users ';
         $data = $this->manage_user_model->getPdfData();
         $data = json_decode(json_encode($data), true);
         $header = array('SL', 'username', 'Full Name', 'Role');
