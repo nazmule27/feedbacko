@@ -218,8 +218,10 @@ function NbLines($w,$txt)
         $fill = false;
         $i=1;
         foreach ($data as $row) {
-            $this->Row(array($i, $row["comments"]));
-            $i++;
+            if($row["comments"]!==''){
+                $this->Row(array($i, $row["comments"]));
+                $i++;
+            }
         }
 
     }

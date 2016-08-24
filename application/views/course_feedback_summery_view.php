@@ -87,9 +87,13 @@ $full_name = $CI->session->userdata('full_name');
             <h4>Comments:</h4>
             <a class="download-pdf" href="<?php echo base_url().'super_admin_home/course_feedbackComments_pdf/'.$course_id.'/'.$semester_id ?>"><img src="<?=base_url();?>assets/img/pdfIcon.png" alt=""></a>
             <br>
-            <?php $k=1; for ($i = 0; $i < count($course_comment); ++$i) {?>
-                <p><?php echo $k.'. '.$course_comment[$i]->comments;?></p>
-            <?php $k++;} ?>
+            <?php $k=1; for ($i = 0; $i < count($course_comment); ++$i) {
+                if($course_comment[$i]->comments!=='') {
+                    echo '<p>'.$k.'. '.$course_comment[$i]->comments.'</p>';
+                    $k++;
+                }
+            }
+            ?>
         </div>
 
     </div>
