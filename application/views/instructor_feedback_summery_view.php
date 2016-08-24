@@ -42,7 +42,7 @@ $full_name = $CI->session->userdata('full_name');
                             $points=(($teacher_feedback[$i]->count4)*5)+(($teacher_feedback[$i]->count3)*4)+(($teacher_feedback[$i]->count2)*3)+(($teacher_feedback[$i]->count1)*2)+(($teacher_feedback[$i]->count0)*1);
                             if($total!=0){
                                 $each_avg+=($points/$total);
-                                echo $points/$total;
+                                echo round($points/$total,2);
                             }
                             else echo 'N/A';
                             ?>

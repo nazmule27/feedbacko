@@ -188,7 +188,7 @@ function NbLines($w,$txt)
             $points=(($row["count4"])*5)+(($row["count3"])*4)+(($row["count2"])*3)+(($row["count1"])*2)+(($row["count0"])*1);
             if($total!=0){
                 $each_avg+=($points/$total);
-                $each=$points/$total;
+                $each=round($points/$total,2);
             }
             else $each='N/A';
 
