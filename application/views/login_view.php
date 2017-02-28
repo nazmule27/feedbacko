@@ -19,7 +19,6 @@ $this->load->view('common/header');
                     <div class="form-group col-md-12">
                         <input type="submit" class="btn btn-default col-md-12 custom-text" value="Login">
                     </div>
-
                 </form>
             </div>
             <div class="sign-bottom"></div>

@@ -99,7 +99,7 @@ class Super_admin_home extends CI_Controller
         $this->pdf->AddPage();
         $this->pdf->SetWidths($w);
         $this->pdf->SummeryFeedbackTable($header,$w,$data);
-        $this->pdf->Output('instructor_feedback_summery.pdf', 'I');
+        $this->pdf->Output('instructor_feedback_summery_'.$cid.'_'.$tid.'.pdf', 'I');
     }
     public function instructor_feedbackComments_pdf($tid, $cid, $semid){
         $_SESSION["report_name"]='Instructor Feedback Comments for '.$cid.' of '.$tid.' in Semester '.$semid;

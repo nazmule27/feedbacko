@@ -74,7 +74,7 @@ $semester_name = $CI->session->userdata('semester_id');
                         <input type="text" class="form-control " name="w_spent_time_hour" maxlength="2" pattern="^[0-9]{1,2}" placeholder="in hours" required>
                     </div>
                     <div class="form-group">
-                        <label for="instructor">Instructor:</label>
+                        <label for="instructor">Instructor:</label> course_generation
                         <?php
                         $comma='';
                         $instructorName='';
